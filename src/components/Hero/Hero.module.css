@@ -1,0 +1,50 @@
+.hero {
+    background-image: url('../../media//images/Picture.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 1440px;
+    height: 696px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color:  #F7F7F7;
+    text-align: start;
+    position: relative;
+}
+
+.heroBox {
+    width: 571px;
+    height: 176px;
+    gap: 40px;
+}
+
+.hero h1 {
+        font-family: Inter;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 32px;
+        text-align: left;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+            width:173px;
+            height: 56px;
+            top: 20px;
+            left: 20px;
+            padding: 16px 60px 16px 60px;
+            gap: 10px;
+            border-radius: 50px;
+    background-color: #E44848;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #D84343;;
+}
