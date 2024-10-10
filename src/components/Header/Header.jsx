@@ -13,13 +13,10 @@ const Header = () => {
                     <nav>
                         <ul>
                             <li>
-                                {/* <NavLink>
-                                Home
-                                </NavLink> */}
                                 <a className={activ.pathname === '/'? CSS.activ:''} href="/">Home</a>
                             </li>
                             <li>
-                                <a  className={activ.pathname === '/catalog'? CSS.activ:''} href="/campers">Catalog</a>
+                                <a  className={activ.pathname === '/catalog'? CSS.activ:''} href="/catalog">Catalog</a>
                             </li>
                         </ul>
                     </nav>
