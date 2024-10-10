@@ -1,6 +1,8 @@
+import { NavLink, useLocation } from 'react-router-dom';
 import CSS from './Header.module.css';
 
 const Header = () => {
+    const activ = useLocation();
     return (
         <>
             <header className={CSS.header}>
@@ -11,10 +13,13 @@ const Header = () => {
                     <nav>
                         <ul>
                             <li>
-                                <a href="/">Home</a>
+                                {/* <NavLink>
+                                Home
+                                </NavLink> */}
+                                <a className={activ.pathname === '/'? CSS.activ:''} href="/">Home</a>
                             </li>
                             <li>
-                                <a href="/campers">Catalog</a>
+                                <a  className={activ.pathname === '/catalog'? CSS.activ:''} href="/campers">Catalog</a>
                             </li>
                         </ul>
                     </nav>

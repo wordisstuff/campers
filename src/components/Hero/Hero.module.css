@@ -1,3 +1,7 @@
+.container{
+    padding-top: 0;
+    padding-bottom: 0;
+}
 .hero {
     background-image: url('../../media//images/Picture.jpg');
     background-size: cover;
@@ -15,7 +19,7 @@
 .heroBox {
     width: 571px;
     height: 176px;
-    gap: 40px;
+
 }
 
 .hero h1 {

@@ -1,20 +1,18 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Layout from './components/Layout/Layout';
-import Hero from './components/Hero/Hero';
+import Home from './pages/Home/Home';
 
 function App() {
     // const [count, setCount] = useState(0)
 
     return (
         <>
-            <Layout />
-            <Hero />
-            {/* <Routes>
+            <Routes>
                 <Route path="/" element={<Layout />}>
-                    <h1>HELLo</h1>
+                <Route index element={<Home />} />
                 </Route>
-            </Routes> */}
+            </Routes>
         </>
     );
 }
