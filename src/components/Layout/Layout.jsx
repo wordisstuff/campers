@@ -10,7 +10,7 @@ const Layout = () => {
     return (
         <>
             <Suspense fallback={<Loader />}>
-                <header>
+                <header className={CSS.header}>
                     <Container className={CSS.container}>
                         <Header />
                     </Container>

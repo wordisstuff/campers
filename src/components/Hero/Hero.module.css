@@ -1,4 +1,5 @@
 .container{
+    
     padding-top: 0;
     padding-bottom: 0;
 }
@@ -6,7 +7,6 @@
     background-image: url('../../media//images/Picture.jpg');
     background-size: cover;
     background-position: center;
-    width: 1440px;
     height: 696px;
     display: flex;
     align-items: center;
@@ -23,29 +23,39 @@
 }
 
 .hero h1 {
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: left;
+    margin:0;
+    padding-bottom: 16px;
+}
+
+.hero h2 {
         font-family: Inter;
-        font-size: 48px;
+        font-size: 24px;
         font-weight: 600;
         line-height: 32px;
         text-align: left;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
+        margin:0;
+        padding-bottom: 40px;
 }
 
 .btn {
-            width:173px;
-            height: 56px;
-            top: 20px;
-            left: 20px;
-            padding: 16px 60px 16px 60px;
-            gap: 10px;
-            border-radius: 50px;
+    display:inline-block;
+    padding: 0;
+    width:173px;
+    padding: 16px 0;
+    border-radius: 50px;
     background-color: #E44848;
-    color: #fff;
-    text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.005em;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
     transition: background-color 0.3s ease;
 }
 

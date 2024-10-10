@@ -1,37 +1,28 @@
-import { useEffect, useState } from "react";
-import { carApi } from "../../api/api";
-import Car from "../Car/Car";
-import CSS from './CarList.module.css'
-import { useDispatch, useSelector } from "react-redux";
-import { selectCampers } from "../../redux/campers/selectors";
-import { getCampers } from "../../redux/campers/operations";
+import { useEffect, useState } from 'react';
+import Car from '../Car/Car';
+import CSS from './CarList.module.css';
+import { selectCampers } from '../../redux/campers/selectors';
+import { getCampers } from '../../redux/campers/operations';
+import { useDispatch, useSelector } from 'react-redux';
 
 const CarList = () => {
-  const dispatch = useDispatch();
-  const [camps, setCamps] = useState(null);
-  const campers = useSelector(selectCampers);
+    const dispatch = useDispatch();
+    const campers = useSelector(selectCampers);
+    console.log(campers);
 
-  useEffect(() => {
-dispatch(getCampers)
-    // const func = async () => {
-
-    //   const campsArr = await carApi.get();
-    //   setCars(carsArr.data);
-    //   console.log(carsArr);
-    // };
-    // func();
-  }, []);
-
-  return (
-    <>
-      <ul className={CSS.cars}>
-        {/* {cars &&
-          cars.map(({ ...rest }) => (
-            <Car key={rest.id} car={rest} />
-          ))} */}
-      </ul>
-    </>
-  );
+    useEffect(() => {
+        dispatch(getCampers());
+    }, [dispatch]);
+    return (
+        <>
+            <ul className={CSS.cars}>
+                {campers.items &&
+                    campers.items.map(({ ...rest }) => (
+                        <Car key={rest.id} camp={rest} />
+                    ))}
+            </ul>
+        </>
+    );
 };
 
 export default CarList;

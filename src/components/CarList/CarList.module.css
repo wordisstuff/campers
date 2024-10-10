@@ -1,5 +1,6 @@
 .cars{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    width: 888px;
     gap: 20px;
 }

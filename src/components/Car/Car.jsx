@@ -2,8 +2,8 @@
 import CSS from './Car.module.css';
 
 const Car = ({ ...rest }) => {
-    // const car = rest.car;
-    // console.log(car);
+    const camp = rest.camp;
+    console.log(camp);
     // console.log(car.address);
     // let address;
     // if (car.address) {
@@ -13,16 +13,24 @@ const Car = ({ ...rest }) => {
     return (
         // <Link>
         <li className={CSS.car}>
-            {/* <img src={`${car.img}`} alt={car.model} className={CSS.img} />
-            <h2>
-                {car.make} {car.model} {car.year} {car.rentalPrice}{' '}
-            </h2>
-            {address && (
-                <p>
-                    {address[3]} {address[4]} {car.rentalCompany} {car.type}
-                </p>
-            )} */}
-            <button className={CSS.button}>Learn more</button>
+            <div>
+                <img
+                    src={`${camp.gallery[0].original}`}
+                    alt={camp.name}
+                    className={CSS.img}
+                />
+            </div>
+            <div className={CSS.discr}>
+                <h2>
+                    {camp.name} {camp.year} {camp.price}{' '}
+                </h2>
+                {/* {address && (
+                    <p>
+                        {address[3]} {address[4]} {car.rentalCompany} {car.type}
+                    </p>
+                )} */}
+            </div>
+            <button className={CSS.button}>Show more</button>
         </li>
         // </Link>
     );
