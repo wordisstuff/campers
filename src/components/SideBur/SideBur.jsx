@@ -22,6 +22,7 @@ const SideBur = () => {
                 <p>Filters</p>
                 <div className={CSS.equipment}>
                     <h3>Vehicle equipment</h3>
+                    <span className={CSS.line}></span>
                     <div className={CSS.equBox}>
                         {queryState &&
                             queryState.map((query, idx) => (
