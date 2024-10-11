@@ -1,23 +1,26 @@
 import { useEffect, useState } from 'react';
 import Car from '../Car/Car';
 import CSS from './CarList.module.css';
-import { selectCampers } from '../../redux/campers/selectors';
 import { getCampers } from '../../redux/campers/operations';
 import { useDispatch, useSelector } from 'react-redux';
+import { selectCampers, selectFilteredCampers } from '../../redux/campers/selectors';
 
 const CarList = () => {
     const dispatch = useDispatch();
-    const campers = useSelector(selectCampers);
-    console.log(campers);
+    const filteredCampers = useSelector(selectFilteredCampers);
+    const campers = useSelector(selectCampers)
+    console.log(campers)
+    console.log(filteredCampers);
 
     useEffect(() => {
         dispatch(getCampers());
-    }, [dispatch]);
+        // console.log(filteredCampers);
+    }, []);
     return (
         <>
             <ul className={CSS.cars}>
-                {campers.items &&
-                    campers.items.map(({ ...rest }) => (
+                {filteredCampers &&
+                    filteredCampers.map(({ ...rest }) => (
                         <Car key={rest.id} camp={rest} />
                     ))}
             </ul>

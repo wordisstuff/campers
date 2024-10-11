@@ -9,7 +9,9 @@
     gap: 24px;
 }
 .discr{
-    display: flex;flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .button {
     width: 166px;

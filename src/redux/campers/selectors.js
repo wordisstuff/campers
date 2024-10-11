@@ -10,12 +10,12 @@ export const selectCampers = state => {
 };
 export const selectFilteredCampers = createSelector(
     [selectCampers, selectorFilter],
-    (items, name) => {
-        if (!name) {
+    (items, location) => {
+        if (!location) {
             return items;
         }
-        return items.filter(user =>
-            user.name.toLowerCase().includes(name.toLowerCase()),
+        return items.filter(camp =>
+            camp.location.toLowerCase().includes(location.toLowerCase()),
         );
     },
 );

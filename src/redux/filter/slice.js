@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const INIT_STATE = {name:''
+const INIT_STATE = {location:''
 };
 
 const filtersSlice = createSlice({
@@ -8,7 +8,8 @@ const filtersSlice = createSlice({
   initialState: INIT_STATE,
   reducers: {
       filterCampers(state, action) {
-          state.name = action.payload;
+        console.log(action.payload)
+          // state.location = action.payload.location;
     },
   },
 });

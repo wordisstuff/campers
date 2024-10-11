@@ -29,8 +29,9 @@ const Car = ({ ...rest }) => {
                         {address[3]} {address[4]} {car.rentalCompany} {car.type}
                     </p>
                 )} */}
+                            <button className={CSS.button}>Show more</button>
+
             </div>
-            <button className={CSS.button}>Show more</button>
         </li>
         // </Link>
     );
