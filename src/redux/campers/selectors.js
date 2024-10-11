@@ -1,13 +1,12 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { selectorFilter } from '../filter/selectors';
 
-export const selectSelectedCamper = state => {
-    return state.campers.selectedCamper;
-};
+export const selectSelectedCamper = state => state.campers.selectedCamper;
 
-export const selectCampers = state => {
-    return state.campers.items;
-};
+export const selectQuery = state => state.campers.query;
+
+export const selectCampers = state => state.campers.items;
+
 export const selectFilteredCampers = createSelector(
     [selectCampers, selectorFilter],
     (items, location) => {
