@@ -20,11 +20,15 @@ const SideBur = () => {
                     <input />
                 </label>
                 <p>Filters</p>
-                <p>Vehicle equipment</p>
-                {queryState &&
-                    queryState.map((query, idx) => (
-                        <CheckBox key={idx} query={query} />
-                    ))}
+                <div className={CSS.equipment}>
+                    <h3>Vehicle equipment</h3>
+                    <div className={CSS.equBox}>
+                        {queryState &&
+                            queryState.map((query, idx) => (
+                                <CheckBox key={idx} query={query} />
+                            ))}
+                    </div>
+                </div>
                 {/* <label> 
     <input className={CSS.checkBox} type='checkbox'/>
     <input className={CSS.checkBox} type='checkbox'/>

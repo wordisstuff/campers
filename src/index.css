@@ -1,3 +1,5 @@
+@import url('./media/vars.css');
+
 @font-face {
   font-family: 'Inter';
   src: url('./media/fonts/Inter_18pt-Medium.ttf') format('truetype');
@@ -24,4 +26,36 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+
+utton {
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }

@@ -7,10 +7,9 @@
     display: flex;
     flex-direction: column;
 }
-.checkBox{
-    width: 60px;
-    height: 60px;
-}
-.checked{
-    background-color: brown;
+
+.equBox{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
 }
