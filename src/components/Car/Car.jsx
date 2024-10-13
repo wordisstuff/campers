@@ -3,13 +3,7 @@ import CSS from './Car.module.css';
 
 const Car = ({ ...rest }) => {
     const camp = rest.camp;
-    console.log(camp);
-    // console.log(car.address);
-    // let address;
-    // if (car.address) {
-    //     address = car.address.split(' ');
-    //     console.log(address);
-    // }
+    // console.log(camp);
     return (
         // <Link>
         <li className={CSS.car}>
@@ -29,8 +23,7 @@ const Car = ({ ...rest }) => {
                         {address[3]} {address[4]} {car.rentalCompany} {car.type}
                     </p>
                 )} */}
-                            <button className={CSS.button}>Show more</button>
-
+                <button className={CSS.button}>Show more</button>
             </div>
         </li>
         // </Link>

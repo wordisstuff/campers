@@ -10,21 +10,19 @@ import {
     REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-// import { globalReducer } from './global/slice';
 import { campersReducer } from './campers/slice';
 import { filtersReducer } from './filter/slice';
 
 const camperPeristConfig = {
     key: 'camper',
     storage,
-    whitelist: ['camper'],
+    whitelist: ['query', 'campType'],
 };
 
 export const store = configureStore({
     reducer: {
-        // global: globalReducer,
         campers: persistReducer(camperPeristConfig, campersReducer),
-          filter: filtersReducer,
+        filter: filtersReducer,
     },
     middleware: getDefaultMiddleware =>
         getDefaultMiddleware({

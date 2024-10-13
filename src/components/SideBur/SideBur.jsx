@@ -1,19 +1,14 @@
-import clsx from 'clsx';
 import CSS from './SideBur.module.css';
-import { useState } from 'react';
 import CheckBox from '../CheckBox/CheckBox';
 import { useSelector } from 'react-redux';
-import { selectQuery } from '../../redux/campers/selectors';
+import { selectCampType, selectQuery } from '../../redux/campers/selectors';
 
-// const handleClick =(e,state)=>{
-// e.de
-// }
 const SideBur = () => {
     const queryState = useSelector(selectQuery);
+    const campTypeState = useSelector(selectCampType);
     console.log(queryState);
     return (
         <div className={CSS.sidbur}>
-            SideBur
             <form className={CSS.form}>
                 <p> Location</p>
                 <label>
@@ -25,24 +20,21 @@ const SideBur = () => {
                     <span className={CSS.line}></span>
                     <div className={CSS.equBox}>
                         {queryState &&
-                            queryState.map((query, idx) => (
-                                <CheckBox key={idx} query={query} />
+                            queryState.map((q, idx) => (
+                                <CheckBox key={idx} query={q} from={'query'} />
                             ))}
                     </div>
                 </div>
-                {/* <label> 
-    <input className={CSS.checkBox} type='checkbox'/>
-    <input className={CSS.checkBox} type='checkbox'/>
-    <input className={CSS.checkBox} type='checkbox'/>
-    <input className={CSS.checkBox} type='checkbox'/>
-    <input className={CSS.checkBox} type='checkbox'/>
-</label>
-<p>Vehicle type</p>
-<label>
-    <input className={CSS.checkBox} type='checkbox'/>
-    <input className={CSS.checkBox} type='checkbox'/>
-    <input className={CSS.checkBox} type='checkbox'/>
-</label> */}
+                <div className={CSS.equipment}>
+                    <p>Vehicle type</p>
+                    <span className={CSS.line}></span>
+                    <div className={CSS.equBox}>
+                        {campTypeState &&
+                            campTypeState.map((q, idx) => (
+                                <CheckBox key={idx} query={q} />
+                            ))}
+                    </div>
+                </div>
             </form>
         </div>
     );

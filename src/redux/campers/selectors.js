@@ -4,6 +4,7 @@ import { selectorFilter } from '../filter/selectors';
 export const selectSelectedCamper = state => state.campers.selectedCamper;
 
 export const selectQuery = state => state.campers.query;
+export const selectCampType = state => state.campers.campType;
 
 export const selectCampers = state => state.campers.items;
 

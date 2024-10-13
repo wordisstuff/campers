@@ -3,13 +3,23 @@ import CSS from './CheckBox.module.css';
 import { useDispatch } from 'react-redux';
 import { setQuery } from '../../redux/campers/slice';
 import { icons } from '../../media/icons/index';
+import { getCampers } from '../../redux/campers/operations';
+import { chechBoxText, stringToBool } from '../../api/api';
 
-const CheckBox = ({ query }) => {
+const CheckBox = ({ query, from }) => {
     const dispatch = useDispatch();
     const keys = Object.keys(query)[0];
+    console.log(query[keys], keys);
+
     const handleClick = e => {
         e.preventDefault();
-        dispatch(setQuery({ [keys]: !query[keys] }));
+
+        console.log(Boolean(''));
+
+        dispatch(setQuery({ [keys]: stringToBool(keys, query[keys]) }, from));
+        console.log('do geta');
+        dispatch(getCampers());
+        console.log('pislya geta');
     };
 
     console.log(keys);
@@ -24,7 +34,7 @@ const CheckBox = ({ query }) => {
                     <svg className={CSS.icon}>
                         <use xlinkHref={`${icons}#${keys}`} />
                     </svg>
-                    {keys}
+                    {chechBoxText(keys)}
                 </div>
             </button>
         </div>
