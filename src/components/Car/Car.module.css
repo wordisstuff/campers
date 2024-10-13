@@ -1,17 +1,67 @@
 .car{
     display: flex;
     flex-direction:row;
-    align-items: center;
-    /* border: 1px solid #ddd; */
-    /* border-radius: 10px; */
+    border-radius: 20px;
+    border: 1px solid var(--gray-l);
     overflow: hidden;
     width: 888px;
-    gap: 24px;
+    height: 368px;
+
+}
+.carBox{
+        display: flex;
+        flex-direction: row;
+        padding: 24px;
+        gap: 24px;
+}
+.topLine{
+    display: flex;
+    justify-content:space-between;
+    margin-bottom: 8px;
+}
+.priceBox{
+    display: flex;
+}
+.heartBtn{
+    display: inline-block;
+    /* width: 24px;
+    height: 24px; */
+    padding: 0 0 0 13px;
+
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.icon{
+    width: 24px;
+    height: 21px;
+}
+.favorite{
+    fill:var(--btn) ;
+}
+.ratingLine{
+    display: flex;
+gap: 16px;
+}
+.ratingIcon{
+    fill: var(--star);
+    width: 16px;
+    height: 16px;
+}
+.ratingText{
+        font-size: 16px;
+        line-height: 24px;
+        text-align: left;
+}
+.mapIcon{
+    width: 16px;
+    height: 16px;
 }
 .discr{
+    width: 524px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /* justify-content: ; */
 }
 .button {
     width: 166px;
@@ -29,8 +79,9 @@
     background-color: #D84343;;
 }
 .img{
-    width: 250px;
-    height: 250px;
+    width: 292px;
+    height: 320px;
+    opacity: 0px;
     object-fit: cover;
     border-radius: 10px;
 

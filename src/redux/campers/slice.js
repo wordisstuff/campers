@@ -16,6 +16,7 @@ const INIT_STATE = {
         { fullyIntegrated: false },
         { alcove: false },
     ],
+    favorite: {},
 };
 
 const campersSlice = createSlice({
@@ -50,6 +51,10 @@ const campersSlice = createSlice({
                 });
             }
         },
+        setFavorite: (state, action) => {
+            console.log(action.payload);
+            state.favorite = { ...state.favorite, ...action.payload };
+        },
     },
     extraReducers: builder => {
         builder.addCase(getCampers.fulfilled, (state, action) => {
@@ -60,4 +65,5 @@ const campersSlice = createSlice({
 });
 export const campersReducer = campersSlice.reducer;
 
-export const { setSelectedCamper, setQuery } = campersSlice.actions;
+export const { setSelectedCamper, setQuery, setFavorite } =
+    campersSlice.actions;

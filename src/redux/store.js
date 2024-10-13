@@ -16,7 +16,7 @@ import { filtersReducer } from './filter/slice';
 const camperPeristConfig = {
     key: 'camper',
     storage,
-    whitelist: ['query', 'campType'],
+    whitelist: ['query', 'campType', 'favorite'],
 };
 
 export const store = configureStore({

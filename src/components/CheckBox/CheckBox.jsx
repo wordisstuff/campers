@@ -6,23 +6,15 @@ import { icons } from '../../media/icons/index';
 import { getCampers } from '../../redux/campers/operations';
 import { chechBoxText, stringToBool } from '../../api/api';
 
-const CheckBox = ({ query, from }) => {
+const CheckBox = ({ query }) => {
     const dispatch = useDispatch();
     const keys = Object.keys(query)[0];
-    console.log(query[keys], keys);
 
     const handleClick = e => {
         e.preventDefault();
-
-        console.log(Boolean(''));
-
-        dispatch(setQuery({ [keys]: stringToBool(keys, query[keys]) }, from));
-        console.log('do geta');
+        dispatch(setQuery({ [keys]: stringToBool(keys, query[keys]) }));
         dispatch(getCampers());
-        console.log('pislya geta');
     };
-
-    console.log(keys);
 
     return (
         <div>
@@ -34,7 +26,7 @@ const CheckBox = ({ query, from }) => {
                     <svg className={CSS.icon}>
                         <use xlinkHref={`${icons}#${keys}`} />
                     </svg>
-                    {chechBoxText(keys)}
+                    <p className={CSS.text}>{chechBoxText(keys)}</p>
                 </div>
             </button>
         </div>

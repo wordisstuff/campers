@@ -7,6 +7,7 @@ export const selectQuery = state => state.campers.query;
 export const selectCampType = state => state.campers.campType;
 
 export const selectCampers = state => state.campers.items;
+export const selectFavorite = state => state.campers.favorite;
 
 export const selectFilteredCampers = createSelector(
     [selectCampers, selectorFilter],
