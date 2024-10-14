@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const urla = `https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers`;
-console.log(urla);
 export const campApi = axios.create({
     baseURL: urla,
 });
@@ -23,8 +22,6 @@ export const stringToBool = (key, value) => {
 };
 
 const checkPropOnCampType = (key, prop) => {
-    console.log(prop);
-    console.log(key);
     switch (key[0]) {
         case 'fullyIntegrated':
             return 'fullyIntegrated';
@@ -44,9 +41,7 @@ const checkPropKeyOnCampType = key => {
 };
 
 export const setQueryParams = arr => {
-    console.log(arr);
     const queryUrlaArr = arr.map(q => {
-        console.log(q);
         const keys = Object.keys(q);
         if (!q[keys[0]]) {
             return '';
@@ -56,10 +51,8 @@ export const setQueryParams = arr => {
             checkPropKeyOnCampType(keys[0]),
             checkPropOnCampType(keys, q[keys[0]]),
         );
-        console.log(params.toString());
         return params.toString();
     });
-    console.log(queryUrlaArr);
     const filteredParams = queryUrlaArr.filter(q => q !== '');
     const queryUrla = filteredParams.join('&');
     return queryUrla;

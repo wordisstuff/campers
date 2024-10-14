@@ -27,14 +27,12 @@ const campersSlice = createSlice({
     initialState: INIT_STATE,
     reducers: {
         setLocation: (state, action) => {
-            console.log(action.payload);
             state.location = action.payload;
         },
         setSelectedCamper: (state, action) => {
             state.selectedCamper = action.payload;
         },
         setQuery: (state, action) => {
-            console.log(action.payload);
             const key = Object.keys(action.payload)[0];
 
             state.query = state.query.map(item => {
@@ -50,7 +48,6 @@ const campersSlice = createSlice({
                 key === 'alcove'
             ) {
                 state.campType = state.campType.map(item => {
-                    console.log(item);
                     if (key in item) {
                         return { [key]: action.payload[key] };
                     }
@@ -62,7 +59,6 @@ const campersSlice = createSlice({
             }
         },
         setFavorite: (state, action) => {
-            console.log(action.payload);
             state.favorite = { ...state.favorite, ...action.payload };
         },
     },
@@ -73,14 +69,12 @@ const campersSlice = createSlice({
                 state.error = null;
             })
             .addCase(getCampers.fulfilled, (state, action) => {
-                console.log(action.payload);
                 state.items = action.payload.items;
                 state.loading = false;
             })
             .addCase(getCampers.rejected, (state, action) => {
-                state.loading = false;
-                console.log(action.payload.status);
                 state.error = action.payload.status;
+                state.loading = false;
             });
     },
 });

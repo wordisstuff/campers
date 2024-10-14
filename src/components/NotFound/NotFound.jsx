@@ -14,6 +14,7 @@ const NotFound = () => {
                 color="#e15b64"
             />
             <h1>Unfortunately, we do not have campers with such parameters!</h1>
+            <h2>Change the settings!</h2>
         </div>
     );
 };

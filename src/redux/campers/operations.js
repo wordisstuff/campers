@@ -11,9 +11,7 @@ export const getCampers = createAsyncThunk(
                 ...campers.campType,
                 ...campers.location,
             ]);
-            console.log(stringParams);
             const { data } = await campApi.get(`?${stringParams}`);
-            console.log(data);
             return data;
         } catch (error) {
             return rejectWithValue({
