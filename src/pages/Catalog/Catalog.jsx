@@ -1,17 +1,17 @@
-import { useState } from 'react';
 import Loader from '../../components/Loader/Loader';
 import CarList from '../../components/CarList/CarList';
 import SideBur from '../../components/SideBur/SideBur';
 import CSS from './Catalog.module.css';
 import Container from '../../components/Container/Container';
+import { useSelector } from 'react-redux';
+import { selectLoading } from '../../redux/campers/selectors';
 
 const Catalog = () => {
-    // const [campers, setCampers] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
+    const Loading = useSelector(selectLoading);
     return (
         <>
             <Container>
-                {isLoading && <Loader />}
+                {Loading && <Loader />}
                 <div className={CSS.catalog}>
                     <SideBur />
                     <CarList />

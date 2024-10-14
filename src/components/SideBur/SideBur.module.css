@@ -65,3 +65,27 @@
     height: 1px;
     background-color: var(--gray-l);
 }
+.btn{
+    border: none;
+    border-radius: 200px;
+    background-color: var(--btn);
+    cursor: pointer;
+    width: 166px;
+    height: 56px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.005em;
+    color: var(--white);
+
+}
+
+.btn:hover {
+    background-color:var(--btn-hover);
+}
+
+.btnBox {
+    display: flex;
+    margin-top: 40px;
+    /* justify-content: center; */
+}

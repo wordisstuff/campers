@@ -1,19 +1,19 @@
 import getRandomColor from '../../services/getRandomColor';
 import CSS from './Loader.module.css';
-import { BallTriangle } from 'react-loader-spinner';
+import { Watch } from 'react-loader-spinner';
 
 const Loader = () => {
     return (
         <div className={CSS.loader}>
-            <BallTriangle
-                height={100}
-                width={100}
-                radius={5}
+            <Watch
+                visible={true}
+                height="80"
+                width="80"
+                radius="48"
                 color={getRandomColor()}
-                ariaLabel="ball-triangle-loading"
+                ariaLabel="watch-loading"
                 wrapperStyle={{}}
                 wrapperClass=""
-                visible={true}
             />
         </div>
     );

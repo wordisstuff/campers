@@ -9,10 +9,4 @@
     width: 100vw;
     height: 100dvh;
     
-    background: rgb(235, 235, 235);
-    background: linear-gradient(
-        45deg,
-        rgb(235, 238, 236),
-        rgb(142, 234, 171)
-    );
 }
