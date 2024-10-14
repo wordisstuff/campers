@@ -3,7 +3,7 @@ import { getCampers } from './operations';
 
 const INIT_STATE = {
     items: null,
-    selectedCamper: null,
+    selectedCamper: '',
     query: [
         { AC: false },
         { transmission: '' },
@@ -26,6 +26,10 @@ const campersSlice = createSlice({
     name: 'campers',
     initialState: INIT_STATE,
     reducers: {
+        setId: (state, action) => {
+            console.log(action.payload);
+            state.selectedCamper = action.payload;
+        },
         setLocation: (state, action) => {
             state.location = action.payload;
         },
@@ -80,5 +84,5 @@ const campersSlice = createSlice({
 });
 export const campersReducer = campersSlice.reducer;
 
-export const { setSelectedCamper, setQuery, setFavorite, setLocation } =
+export const { setSelectedCamper, setQuery, setFavorite, setLocation, setId } =
     campersSlice.actions;

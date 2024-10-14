@@ -2,22 +2,30 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { icons } from '../../media/icons';
 import CSS from './Car.module.css';
-import { setFavorite } from '../../redux/campers/slice';
-import { selectFavorite } from '../../redux/campers/selectors';
+import { setFavorite, setId } from '../../redux/campers/slice';
+import {
+    selectFavorite,
+    selectSelectedCamper,
+} from '../../redux/campers/selectors';
 import { clsx } from 'clsx';
 
 const Car = ({ ...rest }) => {
     const camp = rest.camp;
     const dispatch = useDispatch();
     const favorite = useSelector(selectFavorite);
+    const selectCampId = useSelector(selectSelectedCamper);
+    console.log(selectCampId);
 
     const handleClick = e => {
         e.preventDefault();
         dispatch(setFavorite({ [camp.id]: !favorite[camp.id] }));
     };
 
+    const handleSetId = () => {
+        dispatch(setId(camp.id));
+    };
+
     return (
-        // <Link>
         <li className={CSS.car}>
             <div className={CSS.carBox}>
                 <div>
@@ -60,16 +68,18 @@ const Car = ({ ...rest }) => {
                         </svg>
                         <p>{camp.location}</p>
                     </div>
-                    {/* {address && (
-                    <p>
-                        {address[3]} {address[4]} {car.rentalCompany} {car.type}
-                    </p>
-                )} */}
-                    <button className={CSS.button}>Show more</button>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={`catalog/${camp.id}`}
+                        className={CSS.button}
+                        onClick={handleSetId}
+                    >
+                        Show more
+                    </a>
                 </div>
             </div>
         </li>
-        // </Link>
     );
 };
 

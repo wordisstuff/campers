@@ -3,6 +3,7 @@ import './App.css';
 import Layout from './components/Layout/Layout';
 import Home from './pages/Home/Home';
 import Catalog from './pages/Catalog/Catalog';
+import CamperDetail from './pages/CamperDetail/CamperDetail';
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route path="/catalog" element={<Catalog />} />
+                    <Route path="/catalog/:id" element={<CamperDetail />} />
                 </Route>
             </Routes>
         </>
