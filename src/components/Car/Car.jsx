@@ -2,12 +2,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { icons } from '../../media/icons';
 import CSS from './Car.module.css';
-import { setFavorite, setId } from '../../redux/campers/slice';
+import { setFavorite } from '../../redux/campers/slice';
 import {
     selectFavorite,
     selectSelectedCamper,
 } from '../../redux/campers/selectors';
 import { clsx } from 'clsx';
+import Equipment from '../Equipment/Equipment';
+import { setEquipmentsArr } from '../../api/api';
 
 const Car = ({ ...rest }) => {
     const camp = rest.camp;
@@ -15,15 +17,13 @@ const Car = ({ ...rest }) => {
     const favorite = useSelector(selectFavorite);
     const selectCampId = useSelector(selectSelectedCamper);
     console.log(selectCampId);
-
     const handleClick = e => {
         e.preventDefault();
         dispatch(setFavorite({ [camp.id]: !favorite[camp.id] }));
     };
 
-    // const handleSetId = () => {
-    //     dispatch(setId(camp.id));
-    // };
+    const equipmentKey = setEquipmentsArr(camp);
+    console.log(equipmentKey);
 
     return (
         <li className={CSS.car}>
@@ -68,12 +68,16 @@ const Car = ({ ...rest }) => {
                         </svg>
                         <p>{camp.location}</p>
                     </div>
+                    <Equipment text={'true'} />
+                    {equipmentKey.map((key, idx) => {
+                        console.log(key);
+                        // <Equipment key={idx} />;
+                    })}
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
                         href={`catalog/${camp.id}`}
                         className={CSS.button}
-                        // onClick={handleSetId}
                     >
                         Show more
                     </a>

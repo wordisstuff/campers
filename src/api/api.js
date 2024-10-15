@@ -57,3 +57,12 @@ export const setQueryParams = arr => {
     const queryUrla = filteredParams.join('&');
     return queryUrla;
 };
+
+export const setEquipmentsArr = obj => {
+    return Object.keys(obj).reduce((acc, key) => {
+        if (obj[key].toString() === 'true') {
+            acc.push(key);
+        }
+        return acc;
+    }, []);
+};
