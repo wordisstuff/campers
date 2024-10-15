@@ -21,9 +21,9 @@ const Car = ({ ...rest }) => {
         dispatch(setFavorite({ [camp.id]: !favorite[camp.id] }));
     };
 
-    const handleSetId = () => {
-        dispatch(setId(camp.id));
-    };
+    // const handleSetId = () => {
+    //     dispatch(setId(camp.id));
+    // };
 
     return (
         <li className={CSS.car}>
@@ -73,7 +73,7 @@ const Car = ({ ...rest }) => {
                         rel="noopener noreferrer"
                         href={`catalog/${camp.id}`}
                         className={CSS.button}
-                        onClick={handleSetId}
+                        // onClick={handleSetId}
                     >
                         Show more
                     </a>

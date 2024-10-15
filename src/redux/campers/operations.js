@@ -6,13 +6,21 @@ export const getCampers = createAsyncThunk(
     async (_, { rejectWithValue, getState }) => {
         try {
             const { campers } = getState();
+            console.log(campers);
             const stringParams = setQueryParams([
-                ...(campers.id ? [{ id: campers.id }] : []),
+                // ...(campers.selectedCamper ? campers.selectedCamper : []),
                 ...campers.query,
                 ...campers.campType,
                 ...campers.location,
             ]);
-            const { data } = await campApi.get(`?${stringParams}`);
+
+            const urla = campers.selectedCamper !== ''?`/${campers.selectedCamper}?${stringParams}`:`?${stringParams}`
+
+            console.log(urla);
+            console.log(stringParams);
+            const { data } = await campApi.get(urla);
+            if(!data.items){ return {items:data}
+            }
             console.log(data);
             return data;
         } catch (error) {
