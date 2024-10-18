@@ -39,26 +39,28 @@
 }
 .ratingLine{
     display: flex;
-gap: 16px;
 }
 .ratingIcon{
     fill: var(--star);
     width: 16px;
     height: 16px;
+    margin-right: 4px;
 }
 .ratingText{
         font-size: 16px;
-        line-height: 24px;
-        text-align: left;
+        text-decoration: underline;
+        margin-right: 16px;
 }
 .mapIcon{
     width: 16px;
     height: 16px;
+    margin-right: 4px;
 }
 .discr{
     width: 524px;
     display: flex;
     flex-direction: column;
+    gap: 24px;
 }
 .button {
     display: flex;
@@ -82,4 +84,20 @@ gap: 16px;
     object-fit: cover;
     border-radius: 10px;
 
+}
+.description{
+    width: 520px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+.equipmentUl{
+    width: 524px;
+    height: 104px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }

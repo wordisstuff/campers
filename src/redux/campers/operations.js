@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { campApi, setQueryParams } from '../../api/api';
+import { campApi, setQueryParams, sixItems } from '../../api/api';
 
 export const getCampers = createAsyncThunk(
     'campers/getAll',
@@ -22,6 +22,13 @@ export const getCampers = createAsyncThunk(
                 return { items: data };
             }
             console.log(data);
+
+            if(data.items.length > 0){
+                
+            }
+            sixItems(data.items)
+            sixItems(data.items)
+            sixItems(data.items)
             return data;
         } catch (error) {
             return rejectWithValue({

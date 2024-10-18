@@ -1,0 +1,17 @@
+.equipmentLi{
+    max-height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    gap: 8px;
+    padding: 12px 18px;
+    background-color: var(--badges);
+    border-radius: 100px;
+
+}
+.icon{
+    fill:none;
+    stroke: var(--main);
+}
+

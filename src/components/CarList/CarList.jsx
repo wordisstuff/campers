@@ -10,7 +10,6 @@ const CarList = () => {
     const dispatch = useDispatch();
     const selectCamp = useSelector(selectCampers);
     const error404 = useSelector(selectError);
-
     useEffect(() => {
         dispatch(getCampers());
     }, []);

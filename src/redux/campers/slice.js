@@ -3,6 +3,7 @@ import { getCampers } from './operations';
 
 const INIT_STATE = {
     items: null,
+    pagesArr:null,
     selectedCamper: '',
     query: [
         { AC: false },
@@ -65,6 +66,9 @@ const campersSlice = createSlice({
         setFavorite: (state, action) => {
             state.favorite = { ...state.favorite, ...action.payload };
         },
+        setPages: (state,action)=> {
+state.pagesArr.push(action.payload)
+        }
     },
     extraReducers: builder => {
         builder
@@ -84,5 +88,5 @@ const campersSlice = createSlice({
 });
 export const campersReducer = campersSlice.reducer;
 
-export const { setSelectedCamper, setQuery, setFavorite, setLocation, setId } =
+export const { setSelectedCamper, setQuery, setFavorite, setLocation, setId,setPages } =
     campersSlice.actions;

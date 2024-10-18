@@ -16,14 +16,12 @@ const Car = ({ ...rest }) => {
     const dispatch = useDispatch();
     const favorite = useSelector(selectFavorite);
     const selectCampId = useSelector(selectSelectedCamper);
-    console.log(selectCampId);
     const handleClick = e => {
         e.preventDefault();
         dispatch(setFavorite({ [camp.id]: !favorite[camp.id] }));
     };
 
     const equipmentKey = setEquipmentsArr(camp);
-    console.log(equipmentKey);
 
     return (
         <li className={CSS.car}>
@@ -36,6 +34,7 @@ const Car = ({ ...rest }) => {
                     />
                 </div>
                 <div className={CSS.discr}>
+                    <div>
                     <div className={CSS.topLine}>
                         <h2>{camp.name}</h2>
                         <div className={CSS.priceBox}>
@@ -68,11 +67,13 @@ const Car = ({ ...rest }) => {
                         </svg>
                         <p>{camp.location}</p>
                     </div>
-                    <Equipment text={'true'} />
-                    {equipmentKey.map((key, idx) => {
-                        console.log(key);
-                        // <Equipment key={idx} />;
-                    })}
+                    </div>
+                <p className={CSS.description}>{camp.description}</p>
+                    <ul className={CSS.equipmentUl}>
+                    {equipmentKey && equipmentKey.map((name, idx) =>(
+                        <Equipment key={idx} name={name}  />
+                    ))}
+                    </ul>
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
