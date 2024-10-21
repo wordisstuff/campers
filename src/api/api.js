@@ -67,13 +67,13 @@ export const setEquipmentsArr = obj => {
     }, []);
 };
 
-export const sixItems =(arr)=>{
+export const sixItems = arr => {
     const items = 6;
-    let newArr=[];
-    for(let i = 1;i <=items;i++ ){
-        const item = arr.shift()
-        newArr.push(item)
+    let newArrItems = [];
+    while (arr.length > 0) {
+        const newArrItem = arr.splice(0, items);
+        newArrItems.push(newArrItem);
     }
-    console.log(newArr)
-    return newArr;
+    console.log(newArrItems);
+    return newArrItems;
 };
