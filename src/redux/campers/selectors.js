@@ -9,3 +9,4 @@ export const selectLocation = state => state.campers.location;
 export const selectLoading = state => state.campers.loading;
 export const selectError = state => state.campers.error;
 export const selectPagesArr = state => state.campers.pagesArr;
+export const selectPageIdx = state => state.campers.pageIdx;

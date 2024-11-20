@@ -5,3 +5,23 @@
     width: 888px;
     gap: 20px;
 }
+.pages{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 22px;
+}
+.btn{
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    font-size: 22px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--gray-l);
+}
+
+.active{
+    background-color: var(--btn);
+    color: var(--white);
+}

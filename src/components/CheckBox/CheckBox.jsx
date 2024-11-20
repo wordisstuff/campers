@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import CSS from './CheckBox.module.css';
 import { useDispatch } from 'react-redux';
-import { setQuery } from '../../redux/campers/slice';
+import { setPageIdx, setQuery } from '../../redux/campers/slice';
 import { icons } from '../../media/icons/index';
 import { getCampers } from '../../redux/campers/operations';
 import { chechBoxText, stringToBool } from '../../api/api';
@@ -14,6 +14,7 @@ const CheckBox = ({ query }) => {
         e.preventDefault();
         dispatch(setQuery({ [keys]: stringToBool(keys, query[keys]) }));
         dispatch(getCampers());
+        dispatch(setPageIdx(1));
     };
 
     return (

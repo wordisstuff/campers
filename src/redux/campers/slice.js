@@ -4,6 +4,7 @@ import { getCampers } from './operations';
 const INIT_STATE = {
     items: null,
     pagesArr: null,
+    pageIdx:1,
     selectedCamper: '',
     query: [
         { AC: false },
@@ -69,6 +70,9 @@ const campersSlice = createSlice({
         setPages: (state, action) => {
             state.pagesArr = action.payload;
         },
+        setPageIdx:(state, action) =>{
+            state.pageIdx = action.payload
+        }
     },
     extraReducers: builder => {
         builder
@@ -95,4 +99,5 @@ export const {
     setLocation,
     setId,
     setPages,
+    setPageIdx
 } = campersSlice.actions;
